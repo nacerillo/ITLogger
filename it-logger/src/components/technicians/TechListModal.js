@@ -14,6 +14,7 @@ const TechListModal = () => {
         const data = await res.json();
         
         setTechs(data);
+        setLoading(false);
         
     }
     if(loading) {
