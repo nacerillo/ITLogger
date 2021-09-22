@@ -42,6 +42,7 @@ const Logs = ({log: {logs, loading}, getLogs}) => {
 
 Logs.propTypes = {
     log: PropTypes.object.isRequired,
+    getLogs: PropTypes.func.isRequired,
 }
 const mapStateToProps = state => ({
     log: state.log //this pertains to log = logReducer from our reducer

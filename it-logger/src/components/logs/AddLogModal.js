@@ -16,7 +16,7 @@ const AddLogModal = ({addLog}) => {
           M.toast({html: 'please enter a message and select a technician'});
       }
       else{
-         // console.log(tech,message);
+         console.log(tech,message);
          //create a new log
          const newLog = {
              message,
