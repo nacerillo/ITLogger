@@ -1,17 +1,34 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {addLog} from '../../actions/logActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
-const AddLogModal = () => {
+const AddLogModal = ({addLog}) => {
     const [message, setMessage] = useState('');
     const [attention, setAttention] = useState(false);
     const [tech, setTech] = useState('');
 
+    //if message or tech field is blank, then send toast message 
+    //else create new log and call addLog from redux, feeding newLog as arguement
     const onSubmit = () => {
       if(message === '' || tech === ''){
           M.toast({html: 'please enter a message and select a technician'});
       }
       else{
-          console.log(tech,message);
+         // console.log(tech,message);
+         //create a new log
+         const newLog = {
+             message,
+             tech,
+             date: new Date()
+         }
+          addLog(newLog);
+
+          M.toast({html: `Log added by ${tech}`})
+          setMessage('');
+          setTech('');
+          setAttention(false);
       }
     }
     return (
@@ -62,5 +79,9 @@ const modalStyle = {
     width: '75%',
     height: '75%'
 }
-
-export default AddLogModal
+AddLogModal.propTypes = {
+    //log: PropTypes.object.isRequired,
+    addLog: PropTypes.func.isRequired,
+}
+//first parameter is null since we are only calling an action that changes state. We are not bringing in state
+export default connect(null,{addLog})(AddLogModal);
