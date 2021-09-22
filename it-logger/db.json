@@ -1,6 +1,11 @@
 {
   "logs": [
-  
+    {
+      "message": "Created new Org",
+      "tech": "Jon Doe",
+      "date": "2021-09-22T15:04:11.620Z",
+      "id": 1
+    }
   ],
   "techs": [
     {

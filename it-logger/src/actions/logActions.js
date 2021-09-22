@@ -1,4 +1,4 @@
-import {GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG} from './types';
+import {GET_LOGS, ADD_LOG, DELETE_LOG, SET_LOADING, LOGS_ERROR} from './types';
 
 
 //make call to get logs from api
@@ -46,27 +46,21 @@ export const addLog = (log) => async dispatch => {
 }
 
 //Delete Log
-/**
- * export const addLog = (log) => async dispatch => {
+
+
+  export const deleteLog = (id) => async dispatch => {
     try {
         setLoading();
-        const res = await fetch('/logs', {
-            method: 'POST',
-            body: JSON.stringify(log),
-            headers: {
-                'Content-Type' : 'application/json'
-            }
+        await fetch(`/logs/${id}`, {
+            method: 'DELETE',
         });
-        const data = res.json();
         //make post http request
         //
-        dispatch({type: ADD_LOG, payload: data});
+        dispatch({type: DELETE_LOG, payload: id});
     }catch {
 
     }
 }
- * 
- */
 
 export const setLoading = () => {
     return {
