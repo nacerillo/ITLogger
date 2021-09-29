@@ -1,4 +1,4 @@
-import {GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG, DELETE_LOG, CLEAR_CURRENT, SET_CURRENT, UPDATE_LOG} from '../actions/types';
+import {GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG, DELETE_LOG, CLEAR_CURRENT, SET_CURRENT, UPDATE_LOG, SEARCH_LOGS} from '../actions/types';
 
 //unlike contextAPI, our intial state will be defined in the reducer, not in a seperate file
 //intial state of logs
@@ -14,6 +14,8 @@ export default (state = initialState, action) => {
         case GET_LOGS:
             return {...state, logs: action.payload, loading: false};
 
+        case SEARCH_LOGS: 
+            return {...state, logs: action.payload}
         case DELETE_LOG:
             return {...state, logs: state.logs.filter(log => log.id !== action.payload), loading: false};
 

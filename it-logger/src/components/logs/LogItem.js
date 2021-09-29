@@ -11,6 +11,7 @@ const LogItem = ({log, deleteLog, setCurrent}) => {
     const onCurrSet = () => {
         setCurrent(log);
     }
+    
     const onDelete = () => {
         deleteLog(log.id);
         M.toast({html: 'Log Deleted'})
