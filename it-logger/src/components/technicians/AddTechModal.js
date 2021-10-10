@@ -17,6 +17,8 @@ const AddTechModal = ({addTech}) => {
           //console.log(firstName,lastName);
           const newTech = {firstName, lastName};
           addTech(newTech);
+
+           M.toast({html: 'Technician Added Successfully'});
           //clear the fields
           setFirstName('');
           setLastName('');
