@@ -11,9 +11,9 @@ export const getTechs = () => async dispatch => {
         dispatch({type: GET_TECHS, payload: data});
 
    } catch(err){
-     dispatch({type:TECH_ERROR, payload: err.response.statusText})
+     dispatch({type:TECH_ERROR, payload: err.response.statusText});
    }
-}
+};
 
 
 //add tech 
@@ -29,7 +29,6 @@ export const addTech = (tech) => async dispatch => {
         });
         const data = await res.json();
         //make post http request
-        //
         dispatch({type: ADD_TECH, payload: data});
     }catch(err){
         dispatch({type:TECH_ERROR, payload: err.response.statusText})
@@ -52,6 +51,7 @@ export const addTech = (tech) => async dispatch => {
     }
 }
 
+//set loading
 export const setLoading = () => {
     return {
         type: SET_LOADING

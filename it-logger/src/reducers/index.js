@@ -4,5 +4,6 @@ import logReducer from './logReducer';
 import techReducer from './techReducer';
 //takes in an object that holds all reducers as an arguement
 export default combineReducers({
-  log: logReducer, techReducer
+  log: logReducer, 
+  tech: techReducer
 });

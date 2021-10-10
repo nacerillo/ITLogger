@@ -4,8 +4,8 @@
       "id": 1,
       "message": "Created new Org",
       "attention": true,
-      "tech": "Jon Doe",
-      "date": "2021-09-22T15:59:07.531Z"
+      "tech": "John Doe",
+      "date": "2021-10-10T20:03:09.917Z"
     },
     {
       "message": "Tenant to Tenant Migration from FL-345 to WA-678",
@@ -39,6 +39,11 @@
       "firstName": "Jenny",
       "lastName": "Baker",
       "id": 5
+    },
+    {
+      "firstName": "Bryan",
+      "lastName": "Wright",
+      "id": 6
     }
   ]
 }
